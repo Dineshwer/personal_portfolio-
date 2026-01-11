@@ -1,0 +1,93 @@
+/* 
+   Role: Senior Product Designer
+   Intent: Trust calibration, restraint, systemic design.
+   Status: Strict implementation of user rules.
+*/
+
+/* Section container */
+.about-section {
+    position: relative;
+    z-index: 20;
+    /* Validated fix for background overlap */
+    background-color: #000000;
+    /* Continuity with surrounding sections */
+    padding: 12rem 1.5rem;
+    /* Large vertical margins (section breathes) */
+    color: #e5e5e5;
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: 8rem 1.5rem;
+    }
+}
+
+/* Layout system (editorial, not card-based) */
+.about-container {
+    max-width: 1200px;
+    /* 1100-1200px */
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    /* Mobile default */
+    gap: 3rem;
+}
+
+@media (min-width: 1024px) {
+    .about-container {
+        grid-template-columns: 30% 70%;
+        /* Desktop: 30% / 70% */
+        gap: 0;
+    }
+}
+
+/* Left column: section label only */
+.about-label-column {
+    /* No specific styling needed beyond grid placement */
+}
+
+/* Typography hierarchy (critical) */
+.about-label {
+    font-size: 0.9rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    font-family: inherit;
+    margin: 0;
+}
+
+/* Body copy */
+.about-text {
+    /* Right column: all paragraph content as one block */
+}
+
+.about-text p {
+    font-size: clamp(1.05rem, 1.2vw, 1.25rem);
+    line-height: 1.6;
+    /* 1.55–1.7 */
+    max-width: 58ch;
+    /* 55–60ch */
+    margin-bottom: 1.2em;
+    /* Space paragraphs using margin */
+    color: #e5e5e5;
+}
+
+/* Micro-detail: Bold only one phrase per paragraph */
+.about-text strong {
+    font-weight: 600;
+    color: #ffffff;
+}
+
+/* Motion philosophy (strict) */
+/* CSS animation (exact behavior) */
+.about-block {
+    clip-path: inset(0 0 100% 0);
+    transform: translateY(16px);
+    transition: clip-path 1s cubic-bezier(0.16, 1, 0.3, 1),
+        transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.about-block.is-visible {
+    clip-path: inset(0 0 0 0) !important;
+    transform: translateY(0) !important;
+}

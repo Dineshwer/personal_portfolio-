@@ -1,0 +1,144 @@
+/* Projects Container */
+.projects-container {
+    padding: 8rem 2rem;
+    background-color: #050505;
+    /* Deep black */
+    color: #e5e5e5;
+    position: relative;
+    z-index: 10;
+}
+
+.projects-content {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+.projects-header {
+    margin-bottom: 6rem;
+    border-bottom: 1px solid #222;
+    padding-bottom: 4rem;
+}
+
+.company-title {
+    font-size: clamp(2rem, 3vw, 2.5rem);
+    font-weight: 600;
+    margin: 0 0 1rem 0;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+    color: #fff;
+}
+
+.company-subtitle {
+    font-size: clamp(1rem, 1.2vw, 1.2rem);
+    color: #666;
+    margin: 0;
+    font-weight: 400;
+    font-family: var(--font-mono, monospace);
+    /* Use mono if available, else monospace */
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+/* Grid / List */
+.projects-grid {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Card -> Row Item */
+.project-card {
+    background-color: transparent;
+    border: none;
+    border-top: 1px solid #222;
+    padding: 4rem 0;
+    display: grid;
+    grid-template-columns: 0.5fr 2fr 1fr;
+    /* Index | Content | Tags */
+    gap: 2rem;
+    transition: all 0.4s ease;
+    align-items: flex-start;
+}
+
+.project-card:last-child {
+    border-bottom: 1px solid #222;
+}
+
+.project-card:hover {
+    border-color: #555;
+    background-color: transparent;
+    /* No background change, just border */
+    transform: none;
+    /* No movement */
+}
+
+/* Index */
+.project-index {
+    font-size: 0.875rem;
+    color: #444;
+    font-family: var(--font-mono, monospace);
+    letter-spacing: 0.1em;
+}
+
+.project-card:hover .project-index {
+    color: #fff;
+}
+
+/* Content */
+.card-title {
+    font-size: 2rem;
+    font-weight: 500;
+    margin: 0 0 1rem 0;
+    color: #fff;
+    letter-spacing: -0.01em;
+}
+
+.card-description {
+    font-size: 1.1rem;
+    color: #888;
+    line-height: 1.6;
+    max-width: 600px;
+}
+
+/* Tags */
+.card-tags {
+    margin-top: 0;
+    padding-top: 0.5rem;
+    /* Align visual baseline */
+    border-top: none;
+    text-align: right;
+}
+
+.tags-text {
+    font-size: 0.75rem;
+    color: #444;
+    font-family: var(--font-mono, monospace);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.project-card:hover .tags-text {
+    color: #fff;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .projects-container {
+        padding: 6rem 1.5rem;
+    }
+
+    .project-card {
+        grid-template-columns: 1fr;
+        /* Stack vertically */
+        gap: 1.5rem;
+        padding: 3rem 0;
+    }
+
+    .card-tags {
+        text-align: left;
+    }
+
+    .card-title {
+        font-size: 1.75rem;
+    }
+}

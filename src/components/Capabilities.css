@@ -1,0 +1,85 @@
+/* Capabilities Section */
+.capabilities-section {
+    padding: 10rem 2rem;
+    background-color: #0c0c0c;
+    color: #fff;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.capabilities-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 30% 70%;
+    gap: 2rem;
+}
+
+/* Header */
+.capabilities-header {
+    position: sticky;
+    top: 6rem;
+    height: fit-content;
+}
+
+.section-label {
+    display: block;
+    font-size: 0.8rem;
+    color: #666;
+    margin-bottom: 1rem;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin: 0;
+    color: #fff;
+}
+
+/* Grid */
+.capabilities-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem 2rem;
+}
+
+.capability-category {
+    font-size: 1.1rem;
+    color: #888;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    border-bottom: 1px solid #222;
+    padding-bottom: 0.5rem;
+    display: inline-block;
+}
+
+.capability-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.capability-item {
+    font-size: 1.1rem;
+    color: #e5e5e5;
+    margin-bottom: 0.75rem;
+    line-height: 1.5;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .capabilities-container {
+        grid-template-columns: 1fr;
+    }
+
+    .capabilities-header {
+        position: relative;
+        top: 0;
+        margin-bottom: 3rem;
+    }
+
+    .capabilities-grid {
+        grid-template-columns: 1fr;
+        gap: 3rem;
+    }
+}
