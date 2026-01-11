@@ -89,7 +89,7 @@ export default function ScrollyCanvas() {
     }, [isLoaded]);
 
     return (
-        <section ref={containerRef} className="relative h-[800vh] w-full bg-black">
+        <section ref={containerRef} className="relative h-[400vh] w-full bg-black">
             <div
                 className={`top-0 left-0 h-screen w-full overflow-hidden will-change-transform ${isFixed ? "fixed z-0" : "absolute bottom-0 z-0"
                     }`}

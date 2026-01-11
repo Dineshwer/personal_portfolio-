@@ -20,23 +20,25 @@
     display: grid;
     grid-template-columns: auto 1fr auto;
     align-items: center;
-    padding: 0.75rem 1.5rem;
+    padding: 0 1.5rem;
     gap: 2rem;
 
-    /* Premium Glassmorphism */
-    background: rgba(10, 10, 15, 0.7);
+    /* Permeable Glass */
+    background: rgba(2, 6, 23, 0.6);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
 
-    /* Glowing Border */
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    border-bottom: 1px solid rgba(124, 58, 237, 0.3);
-    /* Electric Violet hint */
-    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5),
-        0 0 20px rgba(124, 58, 237, 0.1);
-    /* Subtle purple glow */
+    /* Split Gradient Border */
+    border: double 1px transparent;
+    background-image: linear-gradient(rgba(2, 6, 23, 0.6), rgba(2, 6, 23, 0.6)),
+        linear-gradient(to right, rgba(59, 130, 246, 0.3), rgba(245, 158, 11, 0.3));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
 
-    border-radius: 999px;
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+
+    border-radius: 99px;
+    height: 3.5rem;
     transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 

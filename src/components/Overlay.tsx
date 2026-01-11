@@ -56,7 +56,8 @@ export default function Overlay({ scrollYProgress }: OverlayProps) {
     // Global Opacity for sections
     const opacity1 = useTransform(scrollYProgress, [0, 0.25, 0.35], [1, 1, 0]);
     const opacity2 = useTransform(scrollYProgress, [0.30, 0.40, 0.65, 0.75], [0, 1, 1, 0]);
-    const opacity3 = useTransform(scrollYProgress, [0.70, 0.80, 0.95, 1.0], [0, 1, 1, 0]);
+    // 3. APPROACH: Extended Duration for Readability
+    const opacity3 = useTransform(scrollYProgress, [0.60, 0.70, 0.99, 1.0], [0, 1, 1, 0]);
 
     return (
         <div className="absolute top-0 left-0 w-full h-full pointer-events-none z-10 font-sans text-white mix-blend-normal">
@@ -84,7 +85,7 @@ export default function Overlay({ scrollYProgress }: OverlayProps) {
                             className="text-white"
                         />
                     </h1>
-                    <p className="text-[1.2vw] font-medium text-cyan-400 tracking-[0.2em] uppercase opacity-90 text-glow">
+                    <p className="text-[1.2vw] font-medium text-[#3b82f6] tracking-[0.2em] uppercase opacity-90 text-glow">
                         <ScrollRevealText
                             text="Offensive Security & Systems Engineer"
                             scrollYProgress={scrollYProgress}
@@ -118,24 +119,24 @@ export default function Overlay({ scrollYProgress }: OverlayProps) {
                 </div>
             </motion.div>
 
-            {/* 3. APPROACH: Vertically Centered Right */}
+            {/* 3. APPROACH: Vertically Centered Left */}
             <motion.div
                 style={{ opacity: opacity3 }}
-                className="absolute top-1/2 -translate-y-1/2 right-[5vw] z-20"
+                className="absolute top-1/2 -translate-y-1/2 left-[5vw] z-20"
             >
-                <div className="max-w-[45vw] text-right flex flex-col items-end">
-                    <h2 className="text-[4vw] font-bold leading-[0.9] mb-6 tracking-tighter text-transparent bg-clip-text bg-gradient-to-l from-cyan-400 to-white">
+                <div className="max-w-[45vw] text-left flex flex-col items-start">
+                    <h2 className="text-[4vw] font-bold leading-[0.9] mb-6 tracking-tighter text-white">
                         <ScrollRevealText
                             text="Attack Surface & Trust Boundaries"
                             scrollYProgress={scrollYProgress}
-                            range={[0.80, 0.88]}
+                            range={[0.65, 0.75]}
                         />
                     </h2>
-                    <p className="text-[1.2vw] text-slate-300 font-light tracking-wide">
+                    <p className="text-[1vw] text-slate-300 font-light tracking-wide">
                         <ScrollRevealText
                             text="Where security assumptions fail"
                             scrollYProgress={scrollYProgress}
-                            range={[0.88, 0.92]}
+                            range={[0.75, 0.80]}
                         />
                     </p>
                 </div>

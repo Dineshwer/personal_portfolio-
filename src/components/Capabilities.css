@@ -24,8 +24,8 @@
     color: #fff;
     margin: 0;
     letter-spacing: -0.02em;
-    text-shadow: 0 0 30px rgba(34, 211, 238, 0.3);
-    /* Cyan Glow */
+    text-shadow: 0 0 30px rgba(245, 158, 11, 0.2);
+    /* Amber Glow */
 }
 
 /* Grid Layout */
@@ -36,23 +36,27 @@
 }
 
 /* Glass Card */
+/* Permeable Glass Card */
 .capability-card {
-    background: rgba(15, 23, 42, 0.4);
+    background: rgba(15, 23, 42, 0.3);
     backdrop-filter: blur(12px);
     border: 1px solid rgba(255, 255, 255, 0.05);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 16px;
     padding: 2rem;
     transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    box-shadow: none;
 }
 
 .capability-card:hover {
-    transform: translateY(-5px);
-    background: rgba(15, 23, 42, 0.6);
-    border-color: rgba(34, 211, 238, 0.3);
-    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+    transform: translateY(-2px);
+    background: rgba(15, 23, 42, 0.5);
+    border-color: rgba(59, 130, 246, 0.3);
+    /* Azure Edge */
+    box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.5), 0 0 20px rgba(59, 130, 246, 0.1);
 }
 
 /* Category Header */
@@ -67,7 +71,7 @@
 .cat-icon-box {
     width: 40px;
     height: 40px;
-    background: rgba(34, 211, 238, 0.1);
+    background: rgba(245, 158, 11, 0.08);
     border-radius: 8px;
     display: flex;
     align-items: center;

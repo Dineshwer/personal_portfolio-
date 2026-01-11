@@ -1,23 +1,28 @@
-import type { Metadata } from "next";
-import Navbar from "@/components/Navbar";
-import "./globals.css";
+import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
+import './globals.css'
+import Cursor from '../components/Cursor'
+import Navbar from '../components/Navbar'
+
+const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
-  title: "Scrollytelling Portfolio",
-  description: "A creative developer portfolio.",
-};
+  title: 'R S Dineshwer | Offensive Security',
+  description: 'Offensive Security & Systems Engineering Portfolio',
+}
 
 export default function RootLayout({
   children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+}: {
+  children: React.ReactNode
+}) {
   return (
     <html lang="en">
-      <body className="font-sans min-h-screen">
+      <body className={inter.className}>
+        <Cursor />
         <Navbar />
         {children}
       </body>
     </html>
-  );
+  )
 }
