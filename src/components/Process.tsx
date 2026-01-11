@@ -1,25 +1,30 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { staggerContainer, fadeInUp } from '../utils/animations';
+import { Search, Skull, Activity, ShieldCheck, Crosshair } from 'lucide-react';
+import { staggerContainer, fadeInUp, opticReveal } from '../utils/animations';
 import './Process.css';
 
 export default function Process() {
     const steps = [
         {
-            title: "Understand the system",
-            desc: "Architecture, attack surface, assumptions."
+            title: "Reconnaissance",
+            desc: "Mapping attack surface, architecture, and hidden dependencies.",
+            icon: Search
         },
         {
-            title: "Break it",
-            desc: "Simulate real-world threats and adversary behavior."
+            title: "Exploitation",
+            desc: "Simulating adversary behavior to breach trust boundaries.",
+            icon: Skull
         },
         {
-            title: "Analyze impact",
-            desc: "Map privilege paths, misconfigurations, and failure points."
+            title: "Impact Analysis",
+            desc: "Tracing privilege paths and business impact of failures.",
+            icon: Activity
         },
         {
-            title: "Harden & improve",
-            desc: "Apply security controls that measurably reduce risk."
+            title: "Remediation",
+            desc: "Implementing controls that eliminate the root cause.",
+            icon: ShieldCheck
         }
     ];
 
@@ -27,7 +32,9 @@ export default function Process() {
         <section className="process-section" id="process">
             <div className="process-container">
                 <div className="process-header">
-                    <span className="section-label">08</span>
+                    <span className="section-label flex justify-center items-center gap-2 text-cyan-400 font-mono tracking-widest text-sm uppercase mb-4">
+                        <Crosshair size={14} /> METHODOLOGY
+                    </span>
                     <h2 className="title-large">How I Work</h2>
                 </div>
 
@@ -39,7 +46,11 @@ export default function Process() {
                     viewport={{ once: true, margin: "-10%" }}
                 >
                     {steps.map((step, index) => (
-                        <motion.div key={index} className="process-step" variants={fadeInUp}>
+                        <motion.div key={index} className="process-step group" variants={fadeInUp}>
+                            <div className="step-icon-box">
+                                <step.icon size={28} />
+                                <span className="step-number">{index + 1}</span>
+                            </div>
                             <h3 className="step-title">{step.title}</h3>
                             <p className="step-desc">{step.desc}</p>
                         </motion.div>

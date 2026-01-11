@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { fadeInUp, staggerContainer } from '../utils/animations';
+import { Cpu, Award, CheckCircle } from 'lucide-react';
+import { opticReveal, staggerContainer } from '../utils/animations';
 import './Education.css';
 
 export default function Education() {
@@ -21,12 +22,12 @@ export default function Education() {
                     initial="hidden"
                     whileInView="visible"
                     viewport={{ once: true }}
-                    variants={fadeInUp}
+                    variants={staggerContainer}
                 >
-                    <span className="section-label">06 / ACADEMICS</span>
-                    <h2 className="ed-title">Education</h2>
+                    <span className="section-label"><Cpu size={14} /> SYSTEM ARCHITECTURE</span>
+                    <motion.h2 className="ed-title" variants={opticReveal}>Education</motion.h2>
 
-                    <div className="ed-card">
+                    <motion.div className="ed-card" variants={opticReveal}>
                         <div className="ed-meta">
                             <span>2022 – 2026</span>
                             <span className="ed-location">Chennai, India</span>
@@ -35,9 +36,9 @@ export default function Education() {
                         <p className="ed-degree">B.Tech – Computer Science <br />(Cyber Physical Systems)</p>
 
                         <div className="ed-grade">
-                            [ CGPA: 8.17 ]
+                            Performance Index: <span className="text-white">8.17</span>
                         </div>
-                    </div>
+                    </motion.div>
                 </motion.div>
 
                 {/* 7. Certifications */}
@@ -48,12 +49,13 @@ export default function Education() {
                     viewport={{ once: true }}
                     variants={staggerContainer}
                 >
-                    <span className="section-label">07 / CREDENTIALS</span>
-                    <h2 className="ed-title">Certifications</h2>
+                    <span className="section-label"><Award size={14} /> SECURITY PROTOCOLS</span>
+                    <motion.h2 className="ed-title" variants={opticReveal}>Certifications</motion.h2>
 
                     <ul className="cert-list">
                         {certs.map((cert, index) => (
-                            <motion.li key={index} className="cert-item" variants={fadeInUp}>
+                            <motion.li key={index} className="cert-item" variants={opticReveal}>
+                                <CheckCircle size={16} className="text-cyan-400" />
                                 {cert}
                             </motion.li>
                         ))}
